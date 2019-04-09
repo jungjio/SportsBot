@@ -16,8 +16,28 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('!nba score'):
+    if message.contentstartswith('!nba streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/nbastreams/")
 
+    if message.contentstartswith('!mlb streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/MLBStreams/")
+
+    if message.contentstartswith('!soccer streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/redsoccer/")
+
+    if message.contentstartswith('!nfl streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/nflstreams/")
+
+    if message.contentstartswith('!ncaa streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/ncaaBBallStreams/")
+
+    if message.contentstartswith('!mma streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/MMAStreams/")
+
+    if message.contentstartswith('!cfb streams'):
+        first_message = await client.send_message(message.channel, "https://www.reddit.com/r/CFBstreams")
+
+    if message.content.startswith('!nba score'):
         today = (date.today()).strftime('%Y-%m-%d')
         today = today.replace("-", "")
         NBALINK = ("http://data.nba.net/10s/prod/v1/%s/scoreboard.json" %(today)) #replay with today 20190403
@@ -31,7 +51,6 @@ async def on_message(message):
 
         if gamesJson["numGames"] > 0:
             array =  gamesJson["games"]
-
             embed=discord.Embed(title="NBA Sports Bot", description="Created by @J.io#5484", color=0x4480ff)
             embed.set_thumbnail(url="https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg")
             embed.add_field(name='NBA Scores', value='\u200b', inline=False)
@@ -51,15 +70,12 @@ async def on_message(message):
 
               period = array[x]["period"]['current']
               if (period==0):
-                  outstandingnews = 'Game is not LIVE'
+                  outstandingnews = 'Game starts at ' + array[x]["startTimeEastern"]
               elif (period > 0 and outstandingnews ==''):
                   outstandingnews = 'Q' + str(period)
 
-
-
               output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
               embed.add_field(name=(homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode), value=outstandingnews, inline=False)
-
 
         else:
              embed.add_field(name="No NBA games today!", value="Sorry!", inline=False)
