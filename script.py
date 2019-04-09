@@ -113,7 +113,7 @@ async def on_message(message):
               if (period==0):
                   outstandingnews = 'Game starts at ' + array[x]["startTimeEastern"]
               elif (period > 0 and outstandingnews ==''):
-                  outstandingnews = 'Q' + str(period)
+                  outstandingnews = 'Q' + str(period)  + ' ' + array[x]['clock']
 
               output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
               embed.add_field(name=(homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode), value=outstandingnews, inline=False)
