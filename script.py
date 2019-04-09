@@ -16,25 +16,25 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-    if message.contentstartswith('!nba streams'):
+    if message.content.startswith('!nba streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/nbastreams/")
 
-    if message.contentstartswith('!mlb streams'):
+    if message.content.startswith('!mlb streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/MLBStreams/")
 
-    if message.contentstartswith('!soccer streams'):
+    if message.content.startswith('!soccer streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/redsoccer/")
 
-    if message.contentstartswith('!nfl streams'):
+    if message.content.startswith('!nfl streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/nflstreams/")
 
-    if message.contentstartswith('!ncaa streams'):
+    if message.content.startswith('!ncaa streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/ncaaBBallStreams/")
 
-    if message.contentstartswith('!mma streams'):
+    if message.content.startswith('!mma streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/MMAStreams/")
 
-    if message.contentstartswith('!cfb streams'):
+    if message.content.startswith('!cfb streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/CFBstreams")
 
     if message.content.startswith('!nba score'):
