@@ -27,7 +27,7 @@ async def on_message(message):
 
         gamesJson = r.json()
         output = ''
-        print(gamesJson)
+
 
         if gamesJson["numGames"] > 0:
             array =  gamesJson["games"]
@@ -48,9 +48,9 @@ async def on_message(message):
 
               outstandingnews = array[x]["nugget"]['text']
 
-              print(array[x]["clock"], "CLOCK:")
 
-              #output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
+
+              output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
 
               embed.add_field(name=(homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode), value=outstandingnews, inline=False)
 
@@ -58,6 +58,7 @@ async def on_message(message):
         else:
              embed.add_field(name="No NBA games today!", value="Sorry!", inline=False)
 
+        print(output)
         await client.send_message(message.channel, embed=embed)
 
 
