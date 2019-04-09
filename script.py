@@ -69,7 +69,7 @@ async def on_message(message):
 
                 outstandingnews = array[x]["nugget"]['text']
                 if outstandingnews != '':
-                    output += "***"+ homeTeamTriCode + " vs "+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
+                    output += "***"+ homeTeamTriCode + "*** vs ***"+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
 
 
         print(output)
