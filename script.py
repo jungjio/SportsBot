@@ -42,7 +42,7 @@ async def on_message(message):
 #################################################################################################################################################################
 
 
-    if message.content.startswith('!nba score'):
+    if message.content.startswith('!nba news'):
         today = (date.today()).strftime('%Y-%m-%d')
         today = today.replace("-", "")
         NBALINK = ("http://data.nba.net/10s/prod/v1/%s/scoreboard.json" %(today)) #replay with today 20190403
@@ -59,7 +59,7 @@ async def on_message(message):
 
             for x in range(len(array)):
               outstandingnews = array[x]["nugget"]['text']
-              output += outstandingnews
+              output += outstandingnews + '\n'
 
 
         print(output)
@@ -68,7 +68,7 @@ async def on_message(message):
 
 #################################################################################################################################################################
 
-    if message.content.startswith('!nba news'):
+    if message.content.startswith('!nba scores'):
         today = (date.today()).strftime('%Y-%m-%d')
         today = today.replace("-", "")
         NBALINK = ("http://data.nba.net/10s/prod/v1/%s/scoreboard.json" %(today)) #replay with today 20190403
