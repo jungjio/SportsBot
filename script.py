@@ -59,7 +59,8 @@ async def on_message(message):
 
             for x in range(len(array)):
               outstandingnews = array[x]["nugget"]['text']
-              output += outstandingnews + '\n'
+              if outstandingnews != '':
+                  output += outstandingnews + '\n'
 
 
         print(output)
