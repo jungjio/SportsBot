@@ -68,8 +68,8 @@ async def on_message(message):
                 awayTeamTriCode = awayTeamScoreAndTriCode["triCode"]
 
                 outstandingnews = array[x]["nugget"]['text']
-                    if outstandingnews != '':
-                        output += "***"+ homeTeamTriCode + " vs "+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
+                if outstandingnews != '':
+                    output += "***"+ homeTeamTriCode + " vs "+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
 
 
         print(output)
