@@ -47,11 +47,14 @@ async def on_message(message):
               awayTeamTriCode = awayTeamScoreAndTriCode["triCode"]
 
               outstandingnews = array[x]["nugget"]['text']
+              print(outstandingnews)
 
+              period = array[x]["period"]['current']
+              if (period==0):
+                  outstandingnews = 'Game is not LIVE'
 
 
               output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
-
               embed.add_field(name=(homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode), value=outstandingnews, inline=False)
 
 
@@ -59,6 +62,7 @@ async def on_message(message):
              embed.add_field(name="No NBA games today!", value="Sorry!", inline=False)
 
         print(output)
+
         await client.send_message(message.channel, embed=embed)
 
 
