@@ -37,7 +37,38 @@ async def on_message(message):
     if message.content.startswith('!cfb streams'):
         first_message = await client.send_message(message.channel, "https://www.reddit.com/r/CFBstreams")
 
+
+
+#################################################################################################################################################################
+
+
     if message.content.startswith('!nba score'):
+        today = (date.today()).strftime('%Y-%m-%d')
+        today = today.replace("-", "")
+        NBALINK = ("http://data.nba.net/10s/prod/v1/%s/scoreboard.json" %(today)) #replay with today 20190403
+        print(NBALINK)
+
+        r = requests.get(NBALINK)
+
+        gamesJson = r.json()
+        output = ''
+
+
+        if gamesJson["numGames"] > 0:
+            array =  gamesJson["games"]
+
+            for x in range(len(array)):
+              outstandingnews = array[x]["nugget"]['text']
+              output += outstandingnews
+
+
+        print(output)
+
+        await client.send_message(message.channel, output)
+
+#################################################################################################################################################################
+
+    if message.content.startswith('!nba news'):
         today = (date.today()).strftime('%Y-%m-%d')
         today = today.replace("-", "")
         NBALINK = ("http://data.nba.net/10s/prod/v1/%s/scoreboard.json" %(today)) #replay with today 20190403
@@ -88,6 +119,8 @@ async def on_message(message):
 
 
 
+#################################################################################################################################################################
+
 
 
 
@@ -124,6 +157,8 @@ async def on_message(message):
 
         print(homeTeam,homeTeamScore,awayTeamScore, awayTeam,status)
         print (homeTeamScore)
+
+
         #print(awayTeamScore,homeTeamScore,awayTeam,homeTeam)
         embed=discord.Embed(title="MLB SPORTS BOT", description="Created by @J.io#5484", color=0x4480ff)
         embed.set_thumbnail(url="https://assets.materialup.com/uploads/57a21b2b-de21-400f-8908-c5ff18b7ac63/preview.jpg")
@@ -136,6 +171,8 @@ async def on_message(message):
 
 
 
+        if (len(homeTeam) == 0 and len(homeTeam) ==0 and len(awayTeamScore) == 0 and len(homeTeamScore) == 0):
+            embed.add_field(name='ERR: No Games Displayed on backend.', value=status[x], inline=False)
 
         print(len(homeTeamScore))
         for x in range(len(homeTeam)):
