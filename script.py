@@ -58,9 +58,18 @@ async def on_message(message):
             array =  gamesJson["games"]
 
             for x in range(len(array)):
-              outstandingnews = array[x]["nugget"]['text']
-              if outstandingnews != '':
-                  output += outstandingnews + '\n'
+
+                homeTeamScoreAndTriCode = array[x]["hTeam"]
+                homeTeamScore = homeTeamScoreAndTriCode["score"]
+                homeTeamTriCode = homeTeamScoreAndTriCode["triCode"]
+
+                awayTeamScoreAndTriCode = array[x]["vTeam"]
+                awayTeamScore = awayTeamScoreAndTriCode["score"]
+                awayTeamTriCode = awayTeamScoreAndTriCode["triCode"]
+
+                outstandingnews = array[x]["nugget"]['text']
+                    if outstandingnews != '':
+                        output += "***"+ homeTeamTriCode + " vs "+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
 
 
         print(output)
