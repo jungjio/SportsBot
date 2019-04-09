@@ -52,6 +52,9 @@ async def on_message(message):
               period = array[x]["period"]['current']
               if (period==0):
                   outstandingnews = 'Game is not LIVE'
+              elif (period > 0 and outstandingnews ==''):
+                  outstandingnews = 'Q' + str(period)
+
 
 
               output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
