@@ -172,7 +172,7 @@ async def on_message(message):
 
 
         if (len(homeTeam) == 0 and len(homeTeam) ==0 and len(awayTeamScore) == 0 and len(homeTeamScore) == 0):
-            embed.add_field(name='ERR: No Games Displayed on backend.', value=status[x], inline=False)
+            embed.add_field(name='ERR: No Games Displayed on backend.', value='', inline=False)
 
         print(len(homeTeamScore))
         for x in range(len(homeTeam)):
