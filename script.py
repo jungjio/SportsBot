@@ -109,10 +109,10 @@ async def on_message(message):
               period = array[x]["period"]['current']
               if (period==0):
                   outstandingnews = 'Game starts at ' + array[x]["startTimeEastern"]
-              elif(array[x]['clock'] == 0.0):
+              elif(array[x]['clock'] == '0.0' or array[x]['clock'] = ''):
                   outstandingnews = 'Q' + str(period) + "OVER"
               else:
-                  outstandingnews = 'Q' + str(period)  + ' | Minutes left :  ' + array[x]['clock']
+                  outstandingnews = 'Q' + str(period)  + ' | Time left :  ' + array[x]['clock']
 
               output = output + (homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode + '\n' + outstandingnews + '\n')
               embed.add_field(name=(homeTeamTriCode + ' ' + homeTeamScore + " - " +  awayTeamScore + ' ' + awayTeamTriCode), value=outstandingnews, inline=False)
