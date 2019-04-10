@@ -109,6 +109,8 @@ async def on_message(message):
               period = array[x]["period"]['current']
               if (period==0):
                   outstandingnews = 'Game starts at ' + array[x]["startTimeEastern"]
+              elif((period > 0) and (array[x]["period"]["isEndOfPeriod"] == True)):
+                  outstandingnews = 'Q' + str(period) + "OVER"
               else:
                   outstandingnews = 'Q' + str(period)  + ' | Minutes left :  ' + array[x]['clock']
 
