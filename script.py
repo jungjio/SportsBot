@@ -170,8 +170,10 @@ async def on_message(message):
         for child in root.iter('game'):
             awayTeam.append((child.attrib['away_team_city']))
             homeTeam.append((child.attrib['home_team_city']))
+        counter = 0
         for child in root.iter('status'):
-            print((child.attrib['home_team_city']))
+            counter += 1
+            print(counter)
             try:
                 if ((child.attrib['inning']) in '456789'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
