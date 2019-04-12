@@ -164,8 +164,6 @@ async def on_message(message):
         root = ET.fromstring(r.content)
         ouputMLB = ''
 
-        print(root)
-
         for child in root.iter('r'):
             awayTeamScore.append(str(child.attrib['away']))
             homeTeamScore.append(str(child.attrib['home']))
@@ -175,12 +173,16 @@ async def on_message(message):
         for child in root.iter('status'):
             if ((child.attrib['inning']) in '456789'):
                 status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+
             if ((child.attrib['inning']) in '3'):
                 status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'rd' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+
             if ((child.attrib['inning']) in '2'):
                 status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'nd' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+
             if ((child.attrib['inning']) in '1'):
                 status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+
 
 
 
