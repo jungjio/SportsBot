@@ -183,22 +183,22 @@ async def on_message(message):
                 if (child.attrib['status'] in "postponedPostponed"):
                     status.append(child.attrib['status'])
 
-                if ("Pre" in child.attrib['status']):
+                elif ("Pre" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
-                if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
+                elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                if ((child.attrib['inning']) in '456789'):
+                elif ((child.attrib['inning']) in '456789'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                if ((child.attrib['inning']) in '3'):
+                elif ((child.attrib['inning']) in '3'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'rd' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                if ((child.attrib['inning']) in '2'):
+                elif ((child.attrib['inning']) in '2'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'nd' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                if ((child.attrib['inning']) in '1'):
+                elif ((child.attrib['inning']) in '1'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
             except:
@@ -206,22 +206,22 @@ async def on_message(message):
                     if (child.attrib['status'] in "postponedPostponed"):
                         status.append(child.attrib['status'])
 
-                    if ("Pre" in child.attrib['status']):
+                    elif ("Pre" in child.attrib['status']):
                         status.append(child.attrib['status'])
 
-                    if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
+                    elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
                         status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                    if ((child.attrib['inning']) in '456789'):
+                    elif ((child.attrib['inning']) in '456789'):
                         status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                    if ((child.attrib['inning']) in '3'):
+                    elif ((child.attrib['inning']) in '3'):
                         status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'rd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                    if ((child.attrib['inning']) in '2'):
+                    elif ((child.attrib['inning']) in '2'):
                         status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'nd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                    if ((child.attrib['inning']) in '1'):
+                    elif ((child.attrib['inning']) in '1'):
                         status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
                 except:
                     status.append(child.attrib['status'])
