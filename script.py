@@ -178,8 +178,9 @@ async def on_message(message):
             counter += 1
             print(counter)
             try:
-                if (child.attrib['status'] in "postponedPostponed"):
+                if (child.attrib['status'] in "postponedPostponedPre-Gamepre-gamepregame"):
                     status.append(child.attrib['status'])
+
 
                 if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
