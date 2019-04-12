@@ -164,6 +164,8 @@ async def on_message(message):
         root = ET.fromstring(r.content)
         ouputMLB = ''
 
+        print(root)
+
         for child in root.iter('r'):
             awayTeamScore.append(str(child.attrib['away']))
             homeTeamScore.append(str(child.attrib['home']))
@@ -171,8 +173,7 @@ async def on_message(message):
             awayTeam.append((child.attrib['away_team_city']))
             homeTeam.append((child.attrib['home_team_city']))
         for child in root.iter('status'):
-            inning = "inning: " + (child.attrib['inning']) # + "outs: " + (child.attrib['outs']) + "strikes: " + (child.attrib['strikes']) + 'balls: ' + (child.attrib['balls'])
-            status.append(inning)
+            status.append((child.attrib['inning']))
 
 
         print(homeTeam,homeTeamScore,awayTeamScore, awayTeam,status)
