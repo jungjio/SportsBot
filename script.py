@@ -192,21 +192,23 @@ async def on_message(message):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
             except:
-                if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
-                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+                try:
+                    if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
+                        status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
-                if ((child.attrib['inning']) in '456789'):
-                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
+                    if ((child.attrib['inning']) in '456789'):
+                        status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                if ((child.attrib['inning']) in '3'):
-                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'rd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
+                    if ((child.attrib['inning']) in '3'):
+                        status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'rd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                if ((child.attrib['inning']) in '2'):
-                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'nd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
+                    if ((child.attrib['inning']) in '2'):
+                        status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'nd' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
 
-                if ((child.attrib['inning']) in '1'):
-                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
-
+                    if ((child.attrib['inning']) in '1'):
+                        status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
+                except:
+                    status.append(child.attrib['status'])
 
 
 
