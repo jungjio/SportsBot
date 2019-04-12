@@ -205,6 +205,7 @@ async def on_message(message):
 
         print(homeTeam,homeTeamScore,awayTeamScore, awayTeam,status)
         print (homeTeamScore)
+        print(len(status))
 
 
         #print(awayTeamScore,homeTeamScore,awayTeam,homeTeam)
