@@ -173,7 +173,7 @@ async def on_message(message):
             awayTeam.append((child.attrib['away_team_city']))
             homeTeam.append((child.attrib['home_team_city']))
         for child in root.iter('status'):
-            status.append((child.attrib['innings']))
+            status.append('inning: '(child.attrib['inning']))
 
 
         print(homeTeam,homeTeamScore,awayTeamScore, awayTeam,status)
