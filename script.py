@@ -178,7 +178,7 @@ async def on_message(message):
             counter += 1
             print(counter)
             try:
-                print(type(child.attrib['status']), child.attrib['status'])
+                print(type(child.attrib['status']), child.attrib['status'], "inning state"+ (child.attrib['inning_state']))
 
                 if (child.attrib['status'] in "postponedPostponed"):
                     status.append(child.attrib['status'])
