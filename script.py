@@ -183,7 +183,7 @@ async def on_message(message):
                 if (child.attrib['status'] in "postponedPostponed"):
                     status.append(child.attrib['status'])
 
-                if ("Pre" in (child.attrib['status'])):
+                if ("" == (child.attrib['inning_state'])):
                     status.append(child.attrib['status'])
 
                 if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
@@ -206,7 +206,7 @@ async def on_message(message):
                     if (child.attrib['status'] in "postponedPostponed"):
                         status.append(child.attrib['status'])
 
-                    if ("Pre" in (child.attrib['status'])):
+                    if ("" == (child.attrib['inning_state'])):
                         status.append(child.attrib['status'])
 
                     if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
