@@ -175,6 +175,10 @@ async def on_message(message):
             counter += 1
             print(counter)
             try:
+                print
+                if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
+                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
+
                 if ((child.attrib['inning']) in '456789'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
@@ -188,6 +192,8 @@ async def on_message(message):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
             except:
+                if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
+                    status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
                 if ((child.attrib['inning']) in '456789'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
@@ -200,6 +206,8 @@ async def on_message(message):
 
                 if ((child.attrib['inning']) in '1'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'st' + ' | Outs: ' + child.attrib['o'] + ' | Strike: ' + child.attrib['s'])
+
+
 
 
 
