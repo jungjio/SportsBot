@@ -161,7 +161,7 @@ async def on_message(message):
         status = []
 
         r = requests.get(MLBLINK)
-        root = ET.fromstring(r.content)
+        root = ET.parse(r.content) # parse vs fromstring
         ouputMLB = ''
 
         for child in root.iter('r'):
