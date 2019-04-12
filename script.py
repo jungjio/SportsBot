@@ -177,13 +177,13 @@ async def on_message(message):
         for child in root.iter('status'):
             counter += 1
             print(counter)
+            print(child.attrib['status'])
             try:
-                print(type(child.attrib['status']), child.attrib['status'], "inning state"+ (child.attrib['inning_state']))
 
                 if (child.attrib['status'] in "postponedPostponed"):
                     status.append(child.attrib['status'])
 
-                if ("" == (child.attrib['inning_state'])):
+                if ("Pre" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
                 if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
@@ -206,7 +206,7 @@ async def on_message(message):
                     if (child.attrib['status'] in "postponedPostponed"):
                         status.append(child.attrib['status'])
 
-                    if ("" == (child.attrib['inning_state'])):
+                    if ("Pre" in child.attrib['status']):
                         status.append(child.attrib['status'])
 
                     if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
