@@ -183,7 +183,7 @@ async def on_message(message):
                 if (child.attrib['status'] in "postponedPostponedPre-Gamepre-gamepregame"):
                     status.append(child.attrib['status'])
 
-                if (str(child.attrib['status']) == "Pre-Game"):
+                if ("Pre" in (child.attrib['status']) ):
                     status.append(child.attrib['status'])
 
                 if ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
