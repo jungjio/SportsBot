@@ -71,7 +71,10 @@ async def on_message(message):
                 if outstandingnews != '':
                     output += "***"+ homeTeamTriCode + "*** vs ***"+ awayTeamTriCode +"*** : "+ outstandingnews + '\n'
 
+        if (output == ""):
+            output = "There is no news today."
 
+            
         print(output)
 
         await client.send_message(message.channel, output)
