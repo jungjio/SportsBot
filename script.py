@@ -179,14 +179,19 @@ async def on_message(message):
             print(counter)
             print(child.attrib['status'])
             try:
-
                 if (child.attrib['status'] in "postponedPostponed"):
                     status.append(child.attrib['status'])
 
                 elif ("Pre" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
-                elif ("Delayed" in child.attrib['status']):
+                elif ("Delayed Start: Rain" in child.attrib['status']):
+                    status.append(child.attrib['status'])
+
+                elif ("Warm" in child.attrib['status']):
+                    status.append(child.attrib['status'])
+                    
+                elif ("warm" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
                 elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
@@ -213,6 +218,12 @@ async def on_message(message):
                         status.append(child.attrib['status'])
 
                     elif ("Delayed" in child.attrib['status']):
+                        status.append(child.attrib['status'])
+
+                    elif ("Warm" in child.attrib['status']):
+                        status.append(child.attrib['status'])
+
+                    elif ("warm" in child.attrib['status']):
                         status.append(child.attrib['status'])
 
                     elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
