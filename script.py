@@ -186,6 +186,9 @@ async def on_message(message):
                 elif ("Pre" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
+                elif ("Delayed" in child.attrib['status']):
+                    status.append(child.attrib['status'])
+
                 elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
