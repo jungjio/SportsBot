@@ -229,9 +229,26 @@ async def on_message(message):
 
 
 
-        print(homeTeam,homeTeamScore,awayTeamScore, awayTeam,status)
+        print ("hometeam: " + len(homeTeam))
+        print (homeTeam)
+        print (" -----------------  ")
+
+        print ("hometeamscore: " + len(homeTeamScore))
         print (homeTeamScore)
-        print(len(status))
+        print (" -----------------  ")
+
+        print ( "awayteamscore: " +  len(awayTeamScore))
+        print (awayTeamScore)
+        print (" -----------------  ")
+
+
+        print ("away team: " +  len(awayTeam))
+        print (awayTeam)
+        print (" -----------------  ")
+
+        print ("status: " + len(status))
+        print (status)
+        print (" -----------------  ")
 
 
         #print(awayTeamScore,homeTeamScore,awayTeam,homeTeam)
@@ -250,6 +267,7 @@ async def on_message(message):
             embed.add_field(name='ERR: No Games Displayed on backend.', value='', inline=False)
 
         print(len(homeTeamScore))
+
         try:
             for x in range(len(homeTeam)):
                 #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
