@@ -190,7 +190,7 @@ async def on_message(message):
 
                 elif ("Warm" in child.attrib['status']):
                     status.append(child.attrib['status'])
-                    
+
                 elif ("warm" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
@@ -285,15 +285,12 @@ async def on_message(message):
 
         print(len(homeTeamScore))
 
-        try:
-            for x in range(len(homeTeam)):
-                #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
-                embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
+        
+        for x in range(len(homeTeam)):
+            #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
+            embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
 
-        except:
-            for y in range(1,len(homeTeam)-x):
-                z = y+x
-                embed.add_field(name=homeTeam[z] + ' '  + homeTeamScore[z] + ' - ' + awayTeamScore[z] + ' ' + awayTeam[z], value=status[z], inline=False)
+
 
 
         print(ouputMLB)
