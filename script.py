@@ -194,6 +194,9 @@ async def on_message(message):
                 elif ("warm" in child.attrib['status']):
                     status.append(child.attrib['status'])
 
+                elif ("Final" in child.attrib['status']):
+                    status.append(child.attrib['status'])
+
                 elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
                     status.append(child.attrib['inning_state'] + ' of the ' + (child.attrib['inning']) + 'th' + ' | Outs: ' + child.attrib['outs'] + ' | Strike: ' + child.attrib['strikes'])
 
@@ -224,6 +227,9 @@ async def on_message(message):
                         status.append(child.attrib['status'])
 
                     elif ("warm" in child.attrib['status']):
+                        status.append(child.attrib['status'])
+
+                    elif ("Final" in child.attrib['status']):
                         status.append(child.attrib['status'])
 
                     elif ((child.attrib['inning']) == '10' or (child.attrib['inning']) == '11'):
@@ -285,7 +291,7 @@ async def on_message(message):
 
         print(len(homeTeamScore))
 
-        
+
         for x in range(len(homeTeam)):
             #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
             embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
