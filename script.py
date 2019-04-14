@@ -256,8 +256,9 @@ async def on_message(message):
                 embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
 
         except:
-            for y in range(len(homeTeam)- x):
-                embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
+            for y in range(1,len(homeTeam)-x):
+                z = y+x
+                embed.add_field(name=homeTeam[z] + ' '  + homeTeamScore[z] + ' - ' + awayTeamScore[z] + ' ' + awayTeam[z], value=status[z], inline=False)
 
 
         print(ouputMLB)
