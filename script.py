@@ -229,24 +229,24 @@ async def on_message(message):
 
 
 
-        print ("hometeam: " + len(homeTeam))
+        print ("hometeam: " + str(len(homeTeam)))
         print (homeTeam)
         print (" -----------------  ")
 
-        print ("hometeamscore: " + len(homeTeamScore))
+        print ("hometeamscore: " + str(len(homeTeamScore)))
         print (homeTeamScore)
         print (" -----------------  ")
 
-        print ( "awayteamscore: " +  len(awayTeamScore))
+        print ( "awayteamscore: " +  str(len(awayTeamScore)))
         print (awayTeamScore)
         print (" -----------------  ")
 
 
-        print ("away team: " +  len(awayTeam))
+        print ("away team: " +  str(len(awayTeam)))
         print (awayTeam)
         print (" -----------------  ")
 
-        print ("status: " + len(status))
+        print ("status: " + str(len(status)))
         print (status)
         print (" -----------------  ")
 
