@@ -250,9 +250,15 @@ async def on_message(message):
             embed.add_field(name='ERR: No Games Displayed on backend.', value='', inline=False)
 
         print(len(homeTeamScore))
-        for x in range(len(homeTeam)):
-            #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
-            embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
+        try:
+            for x in range(len(homeTeam)):
+                #ouputMLB += (homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x] + '\n')
+                embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
+
+        except:
+            for y in range(len(homeTeam)- x):
+                embed.add_field(name=homeTeam[x] + ' '  + homeTeamScore[x] + ' - ' + awayTeamScore[x] + ' ' + awayTeam[x], value=status[x], inline=False)
+
 
         print(ouputMLB)
 
