@@ -91,6 +91,7 @@ async def on_message(message):
 
         gamesJson = r.json()
         output = ''
+        print(gamesJson["numGames"], type(gamesJson["numGames"]))
 
 
         if gamesJson["numGames"] > 0:
@@ -129,7 +130,7 @@ async def on_message(message):
         else:
              embed=discord.Embed(title="NBA Sports Bot", description="Created by @J.io#5484", color=0x4480ff)
              embed.set_thumbnail(url="https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg")
-             embed.add_field(name='NBA Scores', value="There are "  + str(gamesJson["numGames"]) + "games today.", inline=False)
+             embed.add_field(name='NBA Scores', value="There are "  + str(gamesJson["numGames"]) + " games today.", inline=False)
              embed.add_field(name="No NBA games today!", value="Sorry!", inline=False)
 
         print(output)
@@ -277,7 +278,7 @@ async def on_message(message):
         #print(awayTeamScore,homeTeamScore,awayTeam,homeTeam)
         embed=discord.Embed(title="MLB SPORTS BOT", description="Created by @J.io#5484", color=0x4480ff)
         embed.set_thumbnail(url="https://assets.materialup.com/uploads/57a21b2b-de21-400f-8908-c5ff18b7ac63/preview.jpg")
-        embed.add_field(name='MLB scores', value="There are "  + str(len(homeTeam)) + "games today.", inline=False)
+        embed.add_field(name='MLB scores', value="There are "  + str(len(homeTeam)) + " games today.", inline=False)
 
         if (len(homeTeamScore) != len(homeTeam)) and (len(awayTeamScore) != len(awayTeam)):
             for z in range((len(homeTeam) - len(homeTeamScore))):
