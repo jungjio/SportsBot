@@ -98,7 +98,7 @@ async def on_message(message):
             array =  gamesJson["games"]
             embed=discord.Embed(title="NBA Sports Bot", description="Created by @J.io#5484", color=0x4480ff)
             embed.set_thumbnail(url="https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg")
-            embed.add_field(name='NBA Scores', value='\u200b', inline=False)
+            embed.add_field(name='NBA Scores', value="There are "  + str(gamesJson["numGames"]) + " games today.", inline=False) 
 
             for x in range(len(array)):
 
@@ -130,7 +130,7 @@ async def on_message(message):
         else:
              embed=discord.Embed(title="NBA Sports Bot", description="Created by @J.io#5484", color=0x4480ff)
              embed.set_thumbnail(url="https://assets.materialup.com/uploads/347c48be-3ed3-4e80-87a0-3353405f0239/0x0ss-85.jpg")
-             embed.add_field(name='NBA Scores', value="There are "  + str(gamesJson["numGames"]) + " games today.", inline=False)
+             embed.add_field(name='NBA Scores', value='\u200b', inline=False)
              embed.add_field(name="No NBA games today!", value="Sorry!", inline=False)
 
         print(output)
